@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 export class AppComponent implements OnInit {
 
   form: FormGroup;
+  loading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,6 +33,9 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.loading = true;
+
     const rawValues = this.form.getRawValue();
 
     const body = {
@@ -45,7 +49,12 @@ export class AppComponent implements OnInit {
       this.openSnackBar('Email enviado. Obrigado! ;)', 'Fechar', 3000);
 
       this.form.reset();
+      this.form.markAsPristine();
+      this.form.markAsUntouched();
+      this.form.updateValueAndValidity();
+      this.loading = false;
     }).catch(err => {
+      this.loading = false;
       this.openSnackBar('Ocorreu um erro! :(', 'Fechar', 3000);
     })
   }

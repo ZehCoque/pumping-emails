@@ -6,12 +6,137 @@ $pink: #E6227F;
   background-color: black;
 }
 
+.title {
+    position: absolute;
+    z-index: 99;
+    left: 20vw;
+    margin-top: 15px;
+}
+
 .email-section {
-  height: calc(50vh - 64px);
+  height: 50vh;
   background-color: $pink;
+}
+
+.email {
+  padding-top: 20px;
+  border: $light-blue solid 5px;
+  border-radius: 20px;
+}
+
+.content {
+  margin: 0 20vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 10px;
+}
+
+.form-input {
+  width: 50%;
+}
+
+.form-textarea {
+  max-width: 500px;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  width: 70px;
 }
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: white;
   border-radius: 5px;
+}
+
+.top-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-wave svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 171px;
+  transform: rotateY(180deg);
+}
+
+.top-wave .shape-fill {
+  fill: #3BE0D7;
+}
+
+.mat-toolbar {
+  background: transparent;
+  color: black;
+}
+
+.bottom-wave {
+  position: absolute;
+  bottom: 50vh;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(124% + 1.3px);
+  height: 163px;
+  transform: rotateY(180deg);
+}
+
+.bottom-wave .shape-fill {
+  fill: #E6227F;
+}
+
+.logo {
+  position: absolute;
+  top: 8vh;
+  left: calc(50vw - 200px);
+  animation: pulse 1s infinite;
+  width: 400px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.1);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+.spinner {
+  margin-right: 40px;
+  zoom: 0.3;
 }
