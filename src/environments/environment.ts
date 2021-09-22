@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://wod623aw3k.execute-api.sa-east-1.amazonaws.com/dev/send-email'
+  API_URL: 'endpoint.lambdaa.function'
 };
 
 /*
